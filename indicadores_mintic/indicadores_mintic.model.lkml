@@ -1,7 +1,7 @@
-connection: "looker-bigquery-connection"
+  connection: "mintic_indicadores"
 
-include: "/mintic_looker/tb_exclusiones_soporte.view.lkml"
-include: "/*.dashboard"
+include: "/views/*.view.lkml"
+include: "/Dashboards/*.dashboard"  
 
 explore: tb_exclusiones_soporte {
   label: "Exclusiones Soporte"
