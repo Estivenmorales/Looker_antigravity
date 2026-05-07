@@ -2,7 +2,6 @@ connection: "mintic_indicadores_prd"
 
 # include all the views
 include: "/views/**/*.view.lkml"
-include: "/Dashboards/*.dashboard"
 
 datagroup: antigravity_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
@@ -19,4 +18,3 @@ explore: tb_exclusiones_soporte {
   label: "Exclusiones Soporte"
   description: "Análisis de exclusiones y tiempos de falla por elemento de red"
 }
-
