@@ -7,7 +7,7 @@
   elements:
     - name: total_exclusiones_val
       title: "Total Exclusiones"
-      model: indicadores_mintic
+      model: antigravity
       explore: tb_exclusiones_soporte
       type: single_value
       fields: [tb_exclusiones_soporte.total_exclusiones]
@@ -15,7 +15,7 @@
 
     - name: total_tiempo_falla_val
       title: "Tiempo Total de Falla (min)"
-      model: indicadores_mintic
+      model: antigravity
       explore: tb_exclusiones_soporte
       type: single_value
       fields: [tb_exclusiones_soporte.total_tiempo_falla]
@@ -23,7 +23,7 @@
 
     - name: exclusiones_por_isp
       title: "Exclusiones por ISP"
-      model: indicadores_mintic
+      model: antigravity
       explore: tb_exclusiones_soporte
       type: looker_column
       fields: [tb_exclusiones_soporte.isp, tb_exclusiones_soporte.total_exclusiones]
@@ -32,7 +32,7 @@
 
     - name: exclusiones_por_tipo_falla
       title: "Exclusiones por Tipo de Falla"
-      model: indicadores_mintic
+      model: antigravity
       explore: tb_exclusiones_soporte
       type: looker_pie
       fields: [tb_exclusiones_soporte.tipo_falla, tb_exclusiones_soporte.total_exclusiones]
@@ -41,7 +41,7 @@
 
     - name: tendencia_exclusiones
       title: "Tendencia de Exclusiones"
-      model: indicadores_mintic
+      model: antigravity
       explore: tb_exclusiones_soporte
       type: looker_area
       fields: [tb_exclusiones_soporte.fecha_inicio_falla_date, tb_exclusiones_soporte.total_exclusiones]
