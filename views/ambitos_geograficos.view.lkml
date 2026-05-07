@@ -1,7 +1,6 @@
 view: ambitos_geograficos {
   sql_table_name: `disponibilidad.Ambitos_Geograficos` ;;
 
-
   dimension: categoria {
     type: string
     description: "Categoria del municipio"

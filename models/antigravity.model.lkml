@@ -3,6 +3,8 @@ connection: "mintic_indicadores_prd"
 # include all the views
 include: "/views/**/*.view.lkml"
 
+include: "/dashboards/*.dashboard.lookml"
+
 datagroup: antigravity_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
