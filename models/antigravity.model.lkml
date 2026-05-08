@@ -19,4 +19,10 @@ explore: ambitos_geograficos {
 explore: tb_exclusiones_soporte {
   label: "Exclusiones Soporte"
   description: "Análisis de exclusiones y tiempos de falla por elemento de red"
+
+  join: ambitos_geograficos {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: CAST(${ambitos_geograficos.cod_mpio} AS INT64) = ${tb_exclusiones_soporte.municipio} ;;
+  }
 }

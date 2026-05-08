@@ -12,6 +12,10 @@
       type: single_value
       fields: [tb_exclusiones_soporte.total_exclusiones]
       limit: 500
+      listen:
+        municipio: municipio
+        departamento: departamento
+
 
     - name: total_tiempo_falla_val
       title: "Tiempo Total de Falla (min)"
@@ -20,6 +24,10 @@
       type: single_value
       fields: [tb_exclusiones_soporte.total_tiempo_falla]
       limit: 500
+      listen:
+        municipio: municipio
+        departamento: departamento
+
 
     - name: exclusiones_por_isp
       title: "Exclusiones por ISP"
@@ -29,6 +37,10 @@
       fields: [tb_exclusiones_soporte.isp, tb_exclusiones_soporte.total_exclusiones]
       sorts: [tb_exclusiones_soporte.total_exclusiones desc]
       limit: 500
+      listen:
+        municipio: municipio
+        departamento: departamento
+
 
     - name: exclusiones_por_tipo_falla
       title: "Exclusiones por Tipo de Falla"
@@ -38,6 +50,10 @@
       fields: [tb_exclusiones_soporte.tipo_falla, tb_exclusiones_soporte.total_exclusiones]
       sorts: [tb_exclusiones_soporte.total_exclusiones desc]
       limit: 500
+      listen:
+        municipio: municipio
+        departamento: departamento
+
 
     - name: tendencia_exclusiones
       title: "Tendencia de Exclusiones"
@@ -48,3 +64,23 @@
       fill_fields: [tb_exclusiones_soporte.fecha_inicio_falla_date]
       sorts: [tb_exclusiones_soporte.fecha_inicio_falla_date desc]
       limit: 500
+      listen:
+        municipio: municipio
+        departamento: departamento
+
+  filters:
+    - name: municipio
+      title: "Municipio"
+      type: field_filter
+      model: antigravity
+      explore: tb_exclusiones_soporte
+      field: ambitos_geograficos.nom_mpio
+      default_value: "BELLO"
+    - name: departamento
+      title: "Departamento"
+      type: field_filter
+      model: antigravity
+      explore: tb_exclusiones_soporte
+      field: ambitos_geograficos.nom_dpto
+      default_value: "ANTIOQUIA"
+
